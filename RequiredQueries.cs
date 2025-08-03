@@ -60,9 +60,9 @@ namespace Library_Management_System
         // 3- List all books by genre and author.
         public static void BooksByGenreAndAuthor()
         {
-            var res2 = context.Books.GroupBy(b => new { b.Genre, b.AuthorId });
+            var res = context.Books.GroupBy(b => new { b.Genre, b.AuthorId });
             Console.WriteLine("Books By Genre And Author \n");
-            foreach (var group in res2)
+            foreach (var group in res)
             {
                 Console.WriteLine($"Genre: {group.Key.Genre} , Author: {group.Key.AuthorId}");
                 foreach(var book in group)
